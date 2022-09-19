@@ -58,3 +58,55 @@
   cursor: pointer;
   text-align: center;
 }
+
+
+/* Trivia Game */
+
+/* Line Divider */
+hr.solid {
+  border-top: 0.79px solid #DBDEF0;
+}
+
+/* Trivia Element  */
+.trivia-game-container {
+  padding: 5rem;
+}
+
+.question-element {
+  color: var(--font-color);
+  margin: 0.75rem auto;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.shuffled-options-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.shuffled-options {
+  background: none;
+  color: var(--font-color);
+  border-color: #4D5B9E;
+  border-radius: 0.48rem;
+  padding: 0.25rem 0.3rem 0.1875rem 0.25rem;
+  min-width: 6.05rem;
+  min-height: 1.29rem;
+  font-size: 1.1rem;
+  margin-right: 1.5rem;
+}
+
+.shuffled-options-container :hover {
+  background: #D6DBF5;
+}
+
+.answer-check-btn {
+  background-color: #4D5B9E;
+  color: white;
+  border-radius: 10px;
+  padding: 0.625rem 1.3125rem;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: none;
+  margin-top: 2rem;
+}
