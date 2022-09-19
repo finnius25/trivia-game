@@ -1,19 +1,27 @@
 import "./App.css";
 import React from "react";
-import { useState } from "react";
-import TrivaGame from "./components/TrivaGame";
+import { useState, useEffect } from "react";
+import TriviaGame from "./components/TriviaGame";
 
 function App() {
   const [startGame, setStartGame] = useState(false);
+  const [triviaData, setTriviaData] = useState([]);
 
   function startQuiz() {
     setStartGame((prevState) => !prevState);
   }
 
+  useEffect(() => {
+    fetch("https://opentdb.com/api.php?amount=5&category=9&type=multiple")
+      .then((res) => res.json())
+      .then((data) => setTriviaData(data.results));
+  }, []);
+  
+
   return (
     <div className="App">
       {startGame ? (
-        <TrivaGame />
+        <TriviaGame triviaData={triviaData} startGame={startGame}/>
       ) : (
         <div className="start-screen-container">
           <h1 className="trivia-title">Trivia Game</h1>
