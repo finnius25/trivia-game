@@ -13,7 +13,21 @@ function TriviaGame(props) {
       return { isCorrect: "false", text: item, id: nanoid() };
     });
 
-    const options = incorrectAnswers.concat(correctAnswer);
+
+
+    let options = incorrectAnswers.concat(correctAnswer);
+
+    const shuffleArray = array => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array
+    }
+
+    shuffleArray(options);
 
     const shuffledOptions = options.map((option) => {
       return (
